@@ -6,7 +6,7 @@ dotenv.config()
 const sequelize = new Sequelize(`${process.env.POSTGRESQL_URL}/todo`);
 
 
-const connect = () => {
+export const connect = () => {
     try {
     sequelize.authenticate().then(() => {
     console.log("Postgres connection has been established successfully.");
@@ -16,4 +16,6 @@ const connect = () => {
     }
 };
 
-export default { sequelize, connect };
+
+
+export default sequelize;
